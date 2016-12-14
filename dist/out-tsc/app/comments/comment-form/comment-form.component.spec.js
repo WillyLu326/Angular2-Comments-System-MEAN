@@ -1,16 +1,16 @@
 import { async, TestBed } from '@angular/core/testing';
-import { PostsComponent } from './posts.component';
-describe('PostsComponent', function () {
+import { CommentFormComponent } from './comment-form.component';
+describe('CommentFormComponent', function () {
     var component;
     var fixture;
     beforeEach(async(function () {
         TestBed.configureTestingModule({
-            declarations: [PostsComponent]
+            declarations: [CommentFormComponent]
         })
             .compileComponents();
     }));
     beforeEach(function () {
-        fixture = TestBed.createComponent(PostsComponent);
+        fixture = TestBed.createComponent(CommentFormComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
@@ -18,4 +18,4 @@ describe('PostsComponent', function () {
         expect(component).toBeTruthy();
     });
 });
-//# sourceMappingURL=/Users/zhenglu/Desktop/ng2-mean/src/app/posts/posts.component.spec.js.map
+//# sourceMappingURL=/Users/zhenglu/Desktop/ng2-mean/src/app/comments/comment-form/comment-form.component.spec.js.map

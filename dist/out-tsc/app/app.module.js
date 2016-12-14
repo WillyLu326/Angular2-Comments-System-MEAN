@@ -11,21 +11,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './posts.service';
-var ROUTES = [
-    {
-        path: '',
-        redirectTo: 'posts',
-        pathMatch: 'full'
-    },
-    {
-        path: 'posts',
-        component: PostsComponent
-    }
-];
+import { CommentFormComponent } from './comments/comment-form/comment-form.component';
+import { CommentBoxComponent } from './comments/comment-box/comment-box.component';
+import { CommentListComponent } from './comments/comment-list/comment-list.component';
 export var AppModule = (function () {
     function AppModule() {
     }
@@ -33,13 +23,14 @@ export var AppModule = (function () {
         NgModule({
             declarations: [
                 AppComponent,
-                PostsComponent
+                CommentFormComponent,
+                CommentBoxComponent,
+                CommentListComponent
             ],
             imports: [
                 BrowserModule,
                 FormsModule,
-                HttpModule,
-                RouterModule.forRoot(ROUTES)
+                HttpModule
             ],
             providers: [PostsService],
             bootstrap: [AppComponent]
