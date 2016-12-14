@@ -54316,7 +54316,7 @@ module.exports = ""
 /* 596 */
 /***/ function(module, exports) {
 
-module.exports = "<h1>\n  <app-comment-form></app-comment-form>\n</h1>\n"
+module.exports = "<div class=\"container\">\n  <h1>Comments</h1>\n  <hr>\n\n  <app-comment-form></app-comment-form>\n</div>\n"
 
 /***/ },
 /* 597 */
