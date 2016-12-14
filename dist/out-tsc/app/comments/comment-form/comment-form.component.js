@@ -8,10 +8,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import { Comment } from '../models/comment';
+import { CommentService } from '../services/comment-service';
 export var CommentFormComponent = (function () {
-    function CommentFormComponent() {
+    function CommentFormComponent(commentService) {
+        this.commentService = commentService;
+        this.name = '';
+        this.comment = '';
     }
     CommentFormComponent.prototype.ngOnInit = function () {
+    };
+    CommentFormComponent.prototype.ngOnChanges = function () {
+        console.log('OnChanges');
+    };
+    CommentFormComponent.prototype.ngDoCheck = function () {
+        console.log('DoCheck');
+    };
+    CommentFormComponent.prototype.ngAfterViewInit = function () {
+        console.log('AfterViewInit');
+    };
+    CommentFormComponent.prototype.ngAfterViewChecked = function () {
+        console.log('AfterViewChecked');
+    };
+    CommentFormComponent.prototype.ngAfterContentInit = function () {
+        console.log('AfterContentInit');
+    };
+    CommentFormComponent.prototype.ngAfterContentChecked = function () {
+        console.log('AfterContentChecked');
+    };
+    CommentFormComponent.prototype.ngOnDestroy = function () {
+        console.log('OnDestory');
+    };
+    CommentFormComponent.prototype.doSubmit = function () {
+        var newComment = new Comment(this.name, this.comment, new Date());
+        this.commentService.postComment(newComment)
+            .subscribe(function (data) {
+            location.reload();
+        });
     };
     CommentFormComponent = __decorate([
         Component({
@@ -19,7 +52,7 @@ export var CommentFormComponent = (function () {
             templateUrl: './comment-form.component.html',
             styleUrls: ['./comment-form.component.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [CommentService])
     ], CommentFormComponent);
     return CommentFormComponent;
 }());

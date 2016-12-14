@@ -4,6 +4,7 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // Get our API routes
 const api = require('./server/routes/api');
@@ -19,6 +20,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
+
+app.use(cors());
 
 // Set our api routes
 app.use('/api', api);

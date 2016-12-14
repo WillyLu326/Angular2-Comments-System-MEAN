@@ -12,10 +12,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { PostsService } from './posts.service';
 import { CommentFormComponent } from './comments/comment-form/comment-form.component';
 import { CommentBoxComponent } from './comments/comment-box/comment-box.component';
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
+import { CommentService } from './comments/services/comment-service';
+import { EmitterService } from './comments/services/emitter-service';
 export var AppModule = (function () {
     function AppModule() {
     }
@@ -32,8 +33,13 @@ export var AppModule = (function () {
                 FormsModule,
                 HttpModule
             ],
-            providers: [PostsService],
-            bootstrap: [AppComponent]
+            providers: [
+                CommentService,
+                EmitterService
+            ],
+            bootstrap: [
+                AppComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

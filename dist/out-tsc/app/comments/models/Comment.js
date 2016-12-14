@@ -9,4 +9,4 @@ export var Comment = (function () {
     }
     return Comment;
 }());
-//# sourceMappingURL=/Users/zhenglu/Desktop/ng2-mean/src/app/comments/models/Comment.js.map
+//# sourceMappingURL=/Users/zhenglu/Desktop/ng2-mean/src/app/comments/models/comment.js.map

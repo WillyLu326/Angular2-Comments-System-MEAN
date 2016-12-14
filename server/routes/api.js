@@ -10,8 +10,8 @@ module.exports = router;
  */
 router.get('/comments/seed', (req, res) => {
   const newComment = Comment({
-    name: 'Willy Lu',
-    comment: 'It\'s a good day!',
+    name: 'James Lu',
+    comment: 'Have a good day!',
     date: new Date()
   });
 
@@ -63,7 +63,7 @@ router.post('/comments', (req, res) => {
     const newComment = new Comment({
         name: body.name,
         comment: body.comment,
-        date: body.date
+        date: new Date(body.date)
     });
 
     newComment.save( err => {
@@ -105,12 +105,12 @@ router.put('/comments/:id', (req, res) => {
  *  Delete a comment
  */
 router.delete('/comments/:id', (req, res) => {
-    Comment.remove( { _id: req.params.id }, err => {
+    Comment.remove( { _id: req.params.id }, (err, doc) => {
         if (err) {
             err.send('Delete Comment Error');
         }
 
-        res.send('Delete Comment Successfully');
+        res.json(doc);
     });
 });
 

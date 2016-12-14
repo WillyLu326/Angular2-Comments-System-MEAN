@@ -8,10 +8,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import { CommentService } from '../services/comment-service';
 export var CommentListComponent = (function () {
-    function CommentListComponent() {
+    function CommentListComponent(commentService) {
+        this.commentService = commentService;
     }
     CommentListComponent.prototype.ngOnInit = function () {
+        this.loadComments();
+        console.log('list-init');
+    };
+    CommentListComponent.prototype.ngOnChanges = function () {
+        console.log('list-changes');
+    };
+    CommentListComponent.prototype.loadComments = function () {
+        var _this = this;
+        this.commentService.getAllComments()
+            .subscribe(function (comments) { return _this.comments = comments; });
     };
     CommentListComponent = __decorate([
         Component({
@@ -19,7 +31,7 @@ export var CommentListComponent = (function () {
             templateUrl: './comment-list.component.html',
             styleUrls: ['./comment-list.component.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [CommentService])
     ], CommentListComponent);
     return CommentListComponent;
 }());
