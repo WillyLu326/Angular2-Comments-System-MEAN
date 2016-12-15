@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnChanges, Input} from '@angular/core';
+import {Component, OnChanges, Input} from '@angular/core';
 
 import { Comment } from '../models/comment';
 import { CommentService } from '../services/comment-service';
@@ -25,13 +25,11 @@ export class CommentFormComponent implements OnChanges{
     constructor(private commentService: CommentService) {}
 
     ngOnChanges(changes: any) {
-        console.log('form --- changes');
         EmitterService.get(this.editId).subscribe( (comment: Comment) => {
             this.comment = comment
         });
         EmitterService.get(this.addBtn).subscribe( (edit: boolean) => {
             this.editActivated = edit;
-            console.log(this.editActivated);
         });
     }
 
@@ -45,9 +43,10 @@ export class CommentFormComponent implements OnChanges{
               this.commentService.getAllComments()
                 .subscribe( (comments: Comment[]) => {
                     EmitterService.get(this.postId).emit(comments);
-                })
+                });
+              //EmitterService.get(this.addBtn).emit(false);
+              this.editActivated = !this.editActivated;
             })
-
         } else {
           this.commentService.postComment(newComment)
             .subscribe( () => {

@@ -14,14 +14,12 @@ import { EmitterService } from "../services/emitter-service";
 export var CommentBoxComponent = (function () {
     function CommentBoxComponent(commentService) {
         this.commentService = commentService;
+        this.blockX = false;
     }
-    CommentBoxComponent.prototype.ngOnInit = function () {
-    };
-    CommentBoxComponent.prototype.ngOnChanges = function () {
-    };
     CommentBoxComponent.prototype.doEdit = function () {
         EmitterService.get(this.addBtn).emit(true);
         EmitterService.get(this.editId).emit(this.comment);
+        this.blockX = !this.blockX;
     };
     CommentBoxComponent.prototype.doDelete = function (id) {
         var _this = this;

@@ -4,11 +4,13 @@
     {{ comment.comment }}
   </div>
   <div class="panel-footer">
-    <button class="btn btn-info" (click)="doEdit(comment._id)">
+    <button class="btn btn-info" (click)="doEdit(comment.id)">
         <span class="glyphicon glyphicon-edit"></span>
     </button>
 
-    <button class="btn btn-danger" (click)="doDelete(comment._id)">
+    <button class="btn btn-danger"
+            *ngIf="!blockX"
+            (click)="doDelete(comment.id)">
       <span class="glyphicon glyphicon-remove"></span>
     </button>
 

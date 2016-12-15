@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, OnChanges} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, DoCheck} from '@angular/core';
 
 import { Comment } from '../models/comment';
 import { CommentService } from '../services/comment-service';
@@ -9,25 +9,21 @@ import { EmitterService } from "../services/emitter-service";
   templateUrl: './comment-box.component.html',
   styleUrls: ['./comment-box.component.css']
 })
-export class CommentBoxComponent implements OnInit, OnChanges {
+export class CommentBoxComponent {
 
     @Input() comment: Comment;
     @Input() editId: string;
     @Input() postId: string;
     @Input() addBtn: string;
 
+    blockX: boolean = false;
+
     constructor(private commentService: CommentService) {}
-
-    ngOnInit() {
-    }
-
-    ngOnChanges() {
-    }
 
     doEdit() {
         EmitterService.get(this.addBtn).emit(true);
         EmitterService.get(this.editId).emit(this.comment);
-
+        this.blockX = !this.blockX;
     }
 
     doDelete(id: string) {

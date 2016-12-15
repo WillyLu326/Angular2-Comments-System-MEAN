@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8acda01-da19-4bdb-9328-af846710f7d4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/out-tsc/app/app.module.js" afterPath="$PROJECT_DIR$/dist/out-tsc/app/app.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/out-tsc/app/app.module.js.map" afterPath="$PROJECT_DIR$/dist/out-tsc/app/app.module.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-box/comment-box.component.js" afterPath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-box/comment-box.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-box/comment-box.component.js.map" afterPath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-box/comment-box.component.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-form/comment-form.component.js" afterPath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-form/comment-form.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-form/comment-form.component.js.map" afterPath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-form/comment-form.component.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-list/comment-list.component.js" afterPath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-list/comment-list.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-list/comment-list.component.js.map" afterPath="$PROJECT_DIR$/dist/out-tsc/app/comments/comment-list/comment-list.component.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/comment.js" afterPath="$PROJECT_DIR$/server/models/comment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/api.js" afterPath="$PROJECT_DIR$/server/routes/api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.component.html" afterPath="$PROJECT_DIR$/src/app/app.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.html" afterPath="$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.ts" afterPath="$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/comments/comment-form/comment-form.component.html" afterPath="$PROJECT_DIR$/src/app/comments/comment-form/comment-form.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/comments/comment-form/comment-form.component.ts" afterPath="$PROJECT_DIR$/src/app/comments/comment-form/comment-form.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/comments/comment-list/comment-list.component.html" afterPath="$PROJECT_DIR$/src/app/comments/comment-list/comment-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/comments/comment-list/comment-list.component.ts" afterPath="$PROJECT_DIR$/src/app/comments/comment-list/comment-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/comments/models/comment.ts" afterPath="$PROJECT_DIR$/src/app/comments/models/comment.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -43,26 +26,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="comment-form.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/comments/comment-form/comment-form.component.ts">
+      <file leaf-file-name="comment-box.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="46" column="67" lean-forward="false" selection-start-line="46" selection-start-column="67" selection-end-line="46" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#67#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="132">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comment-list.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/comments/comment-list/comment-list.component.ts">
+      <file leaf-file-name="comment-box.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#66#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="220">
+              <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -82,6 +61,7 @@
       <find>mongoose</find>
       <find>comment</find>
       <find>_id</find>
+      <find>console.log</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,7 +79,6 @@
         <option value="$PROJECT_DIR$/src/app/comments/services/comment-service.ts" />
         <option value="$PROJECT_DIR$/src/app/comments/services/emitter-service.ts" />
         <option value="$PROJECT_DIR$/src/app/comments/services/my-service.ts" />
-        <option value="$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.html" />
         <option value="$PROJECT_DIR$/src/app/comments/services/util-service.ts" />
         <option value="$PROJECT_DIR$/src/app/comments/comment-form/comment-form.component.html" />
         <option value="$PROJECT_DIR$/src/app/app.component.html" />
@@ -107,12 +86,13 @@
         <option value="$PROJECT_DIR$/src/app/comments/comment-combo/comment-combo.component.ts" />
         <option value="$PROJECT_DIR$/src/app/comments/comment-list/comment-list.component.ts" />
         <option value="$PROJECT_DIR$/src/app/comments/comment-list/comment-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/server/models/comment.js" />
         <option value="$PROJECT_DIR$/server/routes/api.js" />
         <option value="$PROJECT_DIR$/src/app/comments/models/comment.ts" />
         <option value="$PROJECT_DIR$/src/app/comments/comment-form/comment-form.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.html" />
       </list>
     </option>
   </component>
@@ -493,16 +473,16 @@
       <workItem from="1481659302002" duration="13608000" />
       <workItem from="1481685979075" duration="3904000" />
       <workItem from="1481691105917" duration="10537000" />
-      <workItem from="1481743986471" duration="14769000" />
+      <workItem from="1481743986471" duration="16126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44672000" />
+    <option name="totallyTimeSpent" value="46029000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1279" height="724" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2583466" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -512,7 +492,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2879747" sideWeight="0.49682036" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2879747" sideWeight="0.49682036" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -547,9 +527,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -593,9 +571,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -629,9 +605,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -810,14 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/comments/comment-combo/comment-combo.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -848,16 +814,6 @@
           <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding>
             <element signature="e#0#58#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -912,16 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/comments/comment-form/comment-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="46" column="67" lean-forward="false" selection-start-line="46" selection-start-column="67" selection-end-line="46" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/comments/comment-list/comment-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -929,6 +875,30 @@
           <folding>
             <element signature="e#0#66#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/comments/comment-form/comment-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-792">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/comments/comment-box/comment-box.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

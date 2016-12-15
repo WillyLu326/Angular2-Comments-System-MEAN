@@ -22,13 +22,11 @@ export var CommentFormComponent = (function () {
     }
     CommentFormComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
-        console.log('form --- changes');
         EmitterService.get(this.editId).subscribe(function (comment) {
             _this.comment = comment;
         });
         EmitterService.get(this.addBtn).subscribe(function (edit) {
             _this.editActivated = edit;
-            console.log(_this.editActivated);
         });
     };
     CommentFormComponent.prototype.doSubmit = function () {
@@ -43,6 +41,8 @@ export var CommentFormComponent = (function () {
                     .subscribe(function (comments) {
                     EmitterService.get(_this.postId).emit(comments);
                 });
+                //EmitterService.get(this.addBtn).emit(false);
+                _this.editActivated = !_this.editActivated;
             });
         }
         else {
