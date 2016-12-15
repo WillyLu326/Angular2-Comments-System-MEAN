@@ -1,62 +1,67 @@
-import {Component, OnInit, OnChanges, DoCheck, AfterContentInit,
-  AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import {Component, DoCheck, OnChanges, Input} from '@angular/core';
 
 import { Comment } from '../models/comment';
 import { CommentService } from '../services/comment-service';
+import {EmitterService} from "../services/emitter-service";
 
 @Component({
   selector: 'app-comment-form',
   templateUrl: './comment-form.component.html',
   styleUrls: ['./comment-form.component.css']
 })
-export class CommentFormComponent implements OnInit, OnChanges,
-  DoCheck, AfterViewInit, AfterViewChecked, AfterContentInit,
-  AfterContentChecked, OnDestroy {
+export class CommentFormComponent implements OnChanges{
 
-    name: string = '';
-    comment: string = '';
-    comments: Comment[];
+    @Input() editId: string;
+    @Input() postId: string;
+    @Input() addBtn: string;
 
-    constructor(private commentService: CommentService) { }
+    comment: Comment = {
+        name: '',
+        comment: '',
+        id: String(new Date())
+    };
+    editActivated: boolean;
 
-    ngOnInit() {
+    constructor(private commentService: CommentService) {}
 
-    }
-
-    ngOnChanges() {
-        console.log('OnChanges');
-    }
-
-    ngDoCheck() {
-        console.log('DoCheck');
-    }
-
-    ngAfterViewInit() {
-        console.log('AfterViewInit');
-    }
-
-    ngAfterViewChecked() {
-        console.log('AfterViewChecked');
-    }
-
-    ngAfterContentInit() {
-        console.log('AfterContentInit');
-    }
-
-    ngAfterContentChecked() {
-        console.log('AfterContentChecked');
-    }
-
-    ngOnDestroy() {
-        console.log('OnDestory');
+    ngOnChanges(changes: any) {
+        console.log('form --- changes');
+        EmitterService.get(this.editId).subscribe( (comment: Comment) => {
+            this.comment = comment
+        });
+        EmitterService.get(this.addBtn).subscribe( (edit: boolean) => {
+            this.editActivated = edit;
+            console.log(this.editActivated);
+        });
     }
 
     doSubmit() {
-        const newComment = new Comment(this.name, this.comment, new Date());
-        this.commentService.postComment(newComment)
-          .subscribe( (data: Comment) => {
-              location.reload();
-          });
+      const newComment = new Comment(this.comment.name, this.comment.comment, String(new Date()));
+      if (this.editActivated) {
+          this.commentService.updateComment(this.comment.id, newComment)
+            .subscribe( () => {
+              this.comment.name = '';
+              this.comment.comment = '';
+              this.commentService.getAllComments()
+                .subscribe( (comments: Comment[]) => {
+                    EmitterService.get(this.postId).emit(comments);
+                })
+            })
+
+        } else {
+          this.commentService.postComment(newComment)
+            .subscribe( () => {
+              this.comment.name = '';
+              this.comment.comment = '';
+              this.commentService.getAllComments()
+                .subscribe((comments: Comment[]) => {
+                  EmitterService.get(this.postId).emit(comments);
+                });
+            });
+        }
     }
+
+
+
 
 }

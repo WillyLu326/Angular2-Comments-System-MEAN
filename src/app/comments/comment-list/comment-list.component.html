@@ -1,5 +1,8 @@
 <div *ngIf="comments">
     <app-comment-box *ngFor="let comment of comments"
-                     [comment]="comment">
+                     [comment]="comment"
+                     [editId]="editId"
+                     [postId]="postId"
+                     [addBtn]="addBtn" >
     </app-comment-box>
 </div>

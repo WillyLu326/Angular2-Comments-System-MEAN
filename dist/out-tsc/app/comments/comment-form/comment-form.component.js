@@ -7,45 +7,68 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Comment } from '../models/comment';
 import { CommentService } from '../services/comment-service';
+import { EmitterService } from "../services/emitter-service";
 export var CommentFormComponent = (function () {
     function CommentFormComponent(commentService) {
         this.commentService = commentService;
-        this.name = '';
-        this.comment = '';
+        this.comment = {
+            name: '',
+            comment: '',
+            id: String(new Date())
+        };
     }
-    CommentFormComponent.prototype.ngOnInit = function () {
-    };
-    CommentFormComponent.prototype.ngOnChanges = function () {
-        console.log('OnChanges');
-    };
-    CommentFormComponent.prototype.ngDoCheck = function () {
-        console.log('DoCheck');
-    };
-    CommentFormComponent.prototype.ngAfterViewInit = function () {
-        console.log('AfterViewInit');
-    };
-    CommentFormComponent.prototype.ngAfterViewChecked = function () {
-        console.log('AfterViewChecked');
-    };
-    CommentFormComponent.prototype.ngAfterContentInit = function () {
-        console.log('AfterContentInit');
-    };
-    CommentFormComponent.prototype.ngAfterContentChecked = function () {
-        console.log('AfterContentChecked');
-    };
-    CommentFormComponent.prototype.ngOnDestroy = function () {
-        console.log('OnDestory');
-    };
-    CommentFormComponent.prototype.doSubmit = function () {
-        var newComment = new Comment(this.name, this.comment, new Date());
-        this.commentService.postComment(newComment)
-            .subscribe(function (data) {
-            location.reload();
+    CommentFormComponent.prototype.ngOnChanges = function (changes) {
+        var _this = this;
+        console.log('form --- changes');
+        EmitterService.get(this.editId).subscribe(function (comment) {
+            _this.comment = comment;
+        });
+        EmitterService.get(this.addBtn).subscribe(function (edit) {
+            _this.editActivated = edit;
+            console.log(_this.editActivated);
         });
     };
+    CommentFormComponent.prototype.doSubmit = function () {
+        var _this = this;
+        var newComment = new Comment(this.comment.name, this.comment.comment, String(new Date()));
+        if (this.editActivated) {
+            this.commentService.updateComment(this.comment.id, newComment)
+                .subscribe(function () {
+                _this.comment.name = '';
+                _this.comment.comment = '';
+                _this.commentService.getAllComments()
+                    .subscribe(function (comments) {
+                    EmitterService.get(_this.postId).emit(comments);
+                });
+            });
+        }
+        else {
+            this.commentService.postComment(newComment)
+                .subscribe(function () {
+                _this.comment.name = '';
+                _this.comment.comment = '';
+                _this.commentService.getAllComments()
+                    .subscribe(function (comments) {
+                    EmitterService.get(_this.postId).emit(comments);
+                });
+            });
+        }
+    };
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], CommentFormComponent.prototype, "editId", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], CommentFormComponent.prototype, "postId", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], CommentFormComponent.prototype, "addBtn", void 0);
     CommentFormComponent = __decorate([
         Component({
             selector: 'app-comment-form',

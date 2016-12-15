@@ -17,6 +17,7 @@ import { CommentBoxComponent } from './comments/comment-box/comment-box.componen
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { CommentService } from './comments/services/comment-service';
 import { EmitterService } from './comments/services/emitter-service';
+import { CommentComboComponent } from './comments/comment-combo/comment-combo.component';
 export var AppModule = (function () {
     function AppModule() {
     }
@@ -26,7 +27,8 @@ export var AppModule = (function () {
                 AppComponent,
                 CommentFormComponent,
                 CommentBoxComponent,
-                CommentListComponent
+                CommentListComponent,
+                CommentComboComponent
             ],
             imports: [
                 BrowserModule,

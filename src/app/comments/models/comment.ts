@@ -5,6 +5,6 @@ export class Comment {
 
     constructor(public name: string,
                 public comment: string,
-                public date: Date) {}
+                public id: string) {}
 
 }

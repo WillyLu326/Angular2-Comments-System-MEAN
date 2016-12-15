@@ -2,10 +2,10 @@
  * Created by zhenglu on 12/13/16.
  */
 export var Comment = (function () {
-    function Comment(name, comment, date) {
+    function Comment(name, comment, id) {
         this.name = name;
         this.comment = comment;
-        this.date = date;
+        this.id = id;
     }
     return Comment;
 }());

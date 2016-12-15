@@ -10,13 +10,15 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
 
 import { CommentService } from './comments/services/comment-service';
 import { EmitterService } from './comments/services/emitter-service';
+import { CommentComboComponent } from './comments/comment-combo/comment-combo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CommentFormComponent,
     CommentBoxComponent,
-    CommentListComponent
+    CommentListComponent,
+    CommentComboComponent
   ],
   imports: [
     BrowserModule,

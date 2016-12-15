@@ -4,7 +4,7 @@
     {{ comment.comment }}
   </div>
   <div class="panel-footer">
-    <button class="btn btn-info">
+    <button class="btn btn-info" (click)="doEdit(comment._id)">
         <span class="glyphicon glyphicon-edit"></span>
     </button>
 

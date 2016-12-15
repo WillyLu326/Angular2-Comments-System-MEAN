@@ -12,7 +12,7 @@ router.get('/comments/seed', (req, res) => {
   const newComment = Comment({
     name: 'James Lu',
     comment: 'Have a good day!',
-    date: new Date()
+    date: String(new Date())
   });
 
   newComment.save( err => {
@@ -44,7 +44,7 @@ router.get('/comments', (req, res) => {
  *  Get single Comment
  */
 router.get('/comments/:id', (req, res) => {
-    Comment.findOne({ _id: req.params.id }, (err, doc) => {
+    Comment.findOne({ id: req.params.id }, (err, doc) => {
         if (err) {
           res.status(404);
           res.send('Comment is not found');
@@ -81,7 +81,7 @@ router.post('/comments', (req, res) => {
  */
 router.put('/comments/:id', (req, res) => {
     const body = req.body;
-    Comment.findOne( { _id: req.params.id }, (err, doc) => {
+    Comment.findOne( { id: req.params.id }, (err, doc) => {
         if (err) {
             res.status(404);
             res.send('Update Error');
@@ -105,7 +105,7 @@ router.put('/comments/:id', (req, res) => {
  *  Delete a comment
  */
 router.delete('/comments/:id', (req, res) => {
-    Comment.remove( { _id: req.params.id }, (err, doc) => {
+    Comment.remove( { id: req.params.id }, (err, doc) => {
         if (err) {
             err.send('Delete Comment Error');
         }

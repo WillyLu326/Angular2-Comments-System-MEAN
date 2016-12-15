@@ -7,17 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Comment } from '../models/comment';
 import { CommentService } from '../services/comment-service';
+import { EmitterService } from "../services/emitter-service";
 export var CommentBoxComponent = (function () {
     function CommentBoxComponent(commentService) {
         this.commentService = commentService;
-        this.click = new EventEmitter();
     }
     CommentBoxComponent.prototype.ngOnInit = function () {
     };
     CommentBoxComponent.prototype.ngOnChanges = function () {
+    };
+    CommentBoxComponent.prototype.doEdit = function () {
+        EmitterService.get(this.addBtn).emit(true);
+        EmitterService.get(this.editId).emit(this.comment);
     };
     CommentBoxComponent.prototype.doDelete = function (id) {
         var _this = this;
@@ -25,7 +29,7 @@ export var CommentBoxComponent = (function () {
             .subscribe(function () {
             _this.commentService.getAllComments()
                 .subscribe(function (comments) {
-                _this.click.emit(comments);
+                EmitterService.get(_this.postId).emit(comments);
             });
         });
     };
@@ -34,9 +38,17 @@ export var CommentBoxComponent = (function () {
         __metadata('design:type', Comment)
     ], CommentBoxComponent.prototype, "comment", void 0);
     __decorate([
-        Output(), 
-        __metadata('design:type', EventEmitter)
-    ], CommentBoxComponent.prototype, "click", void 0);
+        Input(), 
+        __metadata('design:type', String)
+    ], CommentBoxComponent.prototype, "editId", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], CommentBoxComponent.prototype, "postId", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], CommentBoxComponent.prototype, "addBtn", void 0);
     CommentBoxComponent = __decorate([
         Component({
             selector: 'app-comment-box',

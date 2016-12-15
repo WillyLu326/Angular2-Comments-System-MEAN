@@ -7,7 +7,7 @@ const mongoose = require('mongoose'),
 let commentSchema = new Schema({
     name: { type: String, required: true },
     comment: { type: String, required: true },
-    date: { type: Date, default: Date.now }
+    id: { type: String, default: String(Date.now()), unique: true }
 });
 
 module.exports = mongoose.model('Comment', commentSchema);

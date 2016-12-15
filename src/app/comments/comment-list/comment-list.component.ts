@@ -1,8 +1,9 @@
-import {Component, OnInit, OnChanges, Input } from '@angular/core';
+import {Component, OnInit, OnChanges, Input} from '@angular/core';
 
 import { Comment } from '../models/comment';
 import { CommentService } from '../services/comment-service';
 import {EmitterService} from "../services/emitter-service";
+
 @Component({
   selector: 'app-comment-list',
   templateUrl: './comment-list.component.html',
@@ -10,17 +11,20 @@ import {EmitterService} from "../services/emitter-service";
 })
 export class CommentListComponent implements OnInit, OnChanges {
 
+    @Input() editId: string;
+    @Input() postId: string;
+    @Input() addBtn: string;
     comments: Comment[];
 
     constructor(private commentService: CommentService) { }
 
     ngOnInit() {
       this.loadComments();
-      console.log('list-init');
     }
 
-    ngOnChanges() {
-        console.log('list-changes');
+    ngOnChanges(changes: any) {
+      EmitterService.get(this.postId).subscribe( (comments: Comment[]) =>
+        this.comments = comments );
     }
 
     loadComments() {

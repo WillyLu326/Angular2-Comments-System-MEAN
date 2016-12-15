@@ -5,15 +5,17 @@
         <span class="glyphicon glyphicon-user"></span>
       </span>
       <input type="text" class="form-control" placeholder="Author"
-             name="name" [(ngModel)]="name">
-      {{ name }}
+             name="name" [(ngModel)]="comment.name">
     </div>
     <br />
     <textarea class="form-control" rows="4" placeholder="Text"
-              name="comment" [(ngModel)]="comment"></textarea>
-    {{ comment }}
+              name="comment" [(ngModel)]="comment.comment"></textarea>
     <br />
-    <button type="submit" class="btn btn-primary btn-block">Add</button>
-    <button type="submit" class="btn btn-warning btn-block">Update</button>
+    <button type="submit"
+            class="btn btn-primary btn-block"
+            *ngIf="!editActivated">Add</button>
+    <button type="submit"
+            class="btn btn-warning btn-block"
+            *ngIf="editActivated">Update</button>
   </div>
 </form>
